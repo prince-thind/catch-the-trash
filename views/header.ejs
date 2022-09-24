@@ -8,7 +8,7 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
     <title>
-        <% if(!locals.title) title='' %>
+        <% if(!locals.title) title='Catch The Trash!' %>
             <%=title%>
     </title>
 </head>
@@ -20,10 +20,12 @@
             <div class="navbar">
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
                 <a class="nav-link active" aria-current="page" href="/about">About</a>
-                <% if(!locals.user) {%>
+                <% if(!locals.username) {%>
                   <a class="nav-link" href="/signup">Sign Up</a>
                   <a class="nav-link" href="/login">Log In</a>
                   <% } else{%>
+                    <a class="nav-link" href="/game">game</a>
+                    <a class="nav-link" href="/profile">profile</a>
                     <a class="nav-link" href="/logout">Log Out</a>
                         <% } %>
               </div>

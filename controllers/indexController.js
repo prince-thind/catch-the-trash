@@ -24,18 +24,27 @@ exports.login_POST = async function (req, res, next) {
     }
 }
 
-exports.signup = function (req, res, next) {
+exports.signup_GET = function (req, res, next) {
     res.render('signup');
 }
 
+exports.signup_POST = async function (req, res, next) {
+   res.send('todo: implement user creation')
+}
+
 exports.logout = function (req, res, next) {
-    res.send('logout');
+    res.clearCookie('token')
+    res.redirect("/");
 }
 
 exports.about = function (req, res, next) {
-    res.send('about');
+    res.render('about', { title: 'About' });
 }
 
 exports.game = function (req, res, next) {
     res.send('main game');
+}
+
+exports.profile = function (req, res, next) {
+    res.render('profile', { title: res.locals.username + "'s Profile" });
 }
