@@ -15,12 +15,13 @@ exports.login_POST = async function (req, res, next) {
 
     const dbUser = await User.findOne({ username, password });
     if (!dbUser) {
-        res.sendStatus(404);
+        res.render('login', { errors: ['Username or Password incorrect'] })
+
     }
     else {
         const token = jwt.sign({ username }, process.env.TOKEN_KEY)
         res.cookie('token', token)
-        res.redirect("/game")
+        res.redirect("/profile")
     }
 }
 
@@ -29,7 +30,21 @@ exports.signup_GET = function (req, res, next) {
 }
 
 exports.signup_POST = async function (req, res, next) {
-   res.send('todo: implement user creation')
+    const username = req.body.username;
+    const password = req.body.password;
+    const email = req.body.email;
+
+    const dbUser = await User.findOne({ username });
+    if (dbUser) {
+        res.render('signup', { errors: ['Username Already Exists'] })
+    }
+    else {
+        const user = new User({ username, password, email });
+        await user.save();
+        const token = jwt.sign({ username }, process.env.TOKEN_KEY)
+        res.cookie('token', token)
+        res.redirect("/profile")
+    }
 }
 
 exports.logout = function (req, res, next) {

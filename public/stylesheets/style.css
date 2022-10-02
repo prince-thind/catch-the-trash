@@ -24,6 +24,10 @@ main{
     align-items: center;
     justify-content: space-between;
 }
+.error{
+    margin-top: 1rem;
+    color:red;
+}
 .navbar{
     display: flex;
 }
