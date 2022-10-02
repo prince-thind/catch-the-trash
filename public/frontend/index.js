@@ -18,7 +18,7 @@ const state = {
 init();
 
 async function init() {
-    state.highscore = await fetchHighScore();
+    state.highscore = (await fetchHighScore()) ?? 0;
 
     trash.style.top = state.pos.y;
 
@@ -40,10 +40,26 @@ async function init() {
 
 }
 
-function incrementScore() {
+async function incrementScore() {
     state.score++;
+    if (state.score > state.highscore) {
+        await updateHighscore(state.score);
+    }
 }
 
+async function updateHighscore(score) {
+    state.highscore = score;
+
+    await fetch('/api/highscore', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            highscore: score
+        })
+    })
+}
 function updateScoreBar() {
     scoreDiv.textContent = `Score: ${state.score}`;
     highscoreDiv.textContent = `HighScore: ${state.highscore}`;
@@ -56,8 +72,6 @@ function update() {
     incrementPosition();
     checkCollision();
     updateScoreBar();
-
-
 
 }
 
