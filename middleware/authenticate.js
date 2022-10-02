@@ -22,6 +22,8 @@ module.exports = function authenticate(req, res, next) {
                 if (err) next(err);
                 if (dbUser) {
                     res.locals.username = dbUser.username;
+                    res.locals.email = dbUser.email;
+                    res.locals.highscore = dbUser.highscore;
                     next();
                 }
                 else {

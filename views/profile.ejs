@@ -1,4 +1,20 @@
 <%-include('header')%>
+    <div class="user-profile">
 
-<%= locals.username %>'s Profile
-<%-include('footer')%>
+        <h2>
+            <%= locals.username %>'s Profile
+        </h2>
+        <h3>
+            User Info:
+        </h3>
+        <ul>
+            <li>Username: <%=locals.username %>
+            </li>
+            <li>Email: <%=locals.email %>
+            </li>
+            <li>HighScore: <%=locals.highscore %>
+            </li>
+        </ul>
+        <a class="link" href="/game"> Play Game</a>
+    </div>
+    <%-include('footer')%>
