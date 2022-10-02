@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game | Catch The Trash</title>
+    <link rel="stylesheet" href="/frontend/style.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="/frontend/index.js" defer type="module"></script>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="heading">Catch The Trash</h1>
+        <nav class="navbar">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link active" aria-current="page" href="/about">About</a>
+            <a class="nav-link" href="/game">Game</a>
+            <a class="nav-link" href="/profile">Profile</a>
+            <a class="nav-link" href="/logout">Log Out</a>
+        </nav>
+    </header>
+    <div class="score-bar">
+        <div id="score">Score: 0</div>
+        <div id="high-score">HighScore: Loading...</div>
+    </div>
+    <p id="trash" draggable="true">Trash</p>
+    <p id="bin">Bin</p>
+</body>
+
+</html>

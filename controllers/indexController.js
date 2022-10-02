@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const path = require("path")
 const jwt = require('jsonwebtoken')
 
 exports.index = function (req, res, next) {
@@ -57,7 +58,7 @@ exports.about = function (req, res, next) {
 }
 
 exports.game = function (req, res, next) {
-    res.send('main game');
+    res.sendFile(path.join(__dirname, '../public/frontend/index.html'));
 }
 
 exports.profile = function (req, res, next) {
