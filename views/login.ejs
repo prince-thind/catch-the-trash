@@ -1,8 +1,15 @@
 <%-include('header')%>
+    <form method="post" class="form">
+        <h2>Login</h2>
+        <fieldset>
+            <label>Username:
+                <input type="text" name="username" required>
+            </label>
+            <label>Password:
+                <input type="text" name="password" required>
+            </label>
+        </fieldset>
 
-    <form method="post">
-        <input type="text" name="username">
-        <input type="text" name="password">
-        <button>submit</button>
+        <button>Submit</button>
     </form>
     <%-include('footer')%>

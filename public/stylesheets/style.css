@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main{
+    flex:1;
+}
+
+.header{
+    background-color: hsl(39, 50%, 25%);
+    color:white;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar{
+    display: flex;
+}
+
+.nav-link{
+    color:white;
+    text-decoration: none;
+    padding:0 1rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+
+}
+.nav-link:hover{
+    background-color: hsl(39, 50%, 15%);
+
+}
+.nav-link:visited{
+    color:white;
+}
+.footer{
+    background-color: black;
+    border:1px solid gray;
+    color:white;
+    padding: 0.5rem;
+}
+
+.intro-heading{
+    padding: 0.5rem;
+    font-size: 2rem;
+}
+.intro-list{
+    text-align: left;
+    list-style-position: inside;
+}
+.intro-list li{
+    padding: 1rem 2rem;
+
+}
+
+.about-para{
+    text-align: justify;
+    padding:1rem 4rem;
+}
+
+.form h2{
+    padding: 0.5rem;
+}
+.form fieldset{
+    max-width: max-content;
+    text-align:  right;
+    margin: auto;
+    padding:1rem;
+}
+.form label{
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+}
+.form input{
+    display: inline-block;
+    padding: 0.5rem;
+}
+.form button{
+    padding:0.5rem 1rem;
+    margin:1rem;
+}
