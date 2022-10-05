@@ -18,7 +18,7 @@ function incrementPosition() {
 }
 
 function setTrashPosition({ x, y }) {
-    UI.trash.style.top =y+ "px";
+    UI.trash.style.top = y + "px";
     UI.trash.style.transform = `translateX(${x}px)`
 }
 
@@ -28,7 +28,7 @@ function updateScoreBar() {
 }
 
 function checkCollision() {
-    if (state.trash.y >= window.innerHeight ) {
+    if (isOutside()) {
         reset();
     }
 }
@@ -47,6 +47,17 @@ function reset() {
 function randomNumberFromInterval(min, max) { // min and max included 
     const num = +(Math.random() * (max - min + 1) + min).toFixed(3)
     return num;
+}
+
+function isOutside() {
+    const div1 = UI.container.getBoundingClientRect();
+    const div2 = UI.trash.getBoundingClientRect();
+
+    const isHorizontiallyOutside = !(div1.right > div2.left &&
+        div1.left < div2.right
+    )
+
+    return state.trash.y >= window.innerHeight || isHorizontiallyOutside
 }
 
 
