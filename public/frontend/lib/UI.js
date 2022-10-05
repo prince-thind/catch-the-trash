@@ -3,7 +3,8 @@ const UI = {
     bin: document.getElementById('bin'),
     score: document.getElementById('score'),
     highscore: document.getElementById('high-score'),
-    loadingModal: document.getElementById('loading-screen')
+    loadingModal: document.getElementById('loading-screen'),
+    container:document.getElementById('main')
 }
 
 function hideLoadingScreen() {
