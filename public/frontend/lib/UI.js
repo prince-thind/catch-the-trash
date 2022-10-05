@@ -4,7 +4,10 @@ const UI = {
     score: document.getElementById('score'),
     highscore: document.getElementById('high-score'),
     loadingModal: document.getElementById('loading-screen'),
-    container:document.getElementById('main')
+    container: document.getElementById('main'),
+    time: document.getElementById('time'),
+    gameOver: document.getElementById('gameover-screen'),
+
 }
 
 function hideLoadingScreen() {

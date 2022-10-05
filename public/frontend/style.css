@@ -32,17 +32,27 @@
   padding: 1rem;
 }
 
-#loading-screen{
-  padding:2rem;
+.modal {
+  padding: 2rem;
   font-size: 3rem;
   position: absolute;
-  top:25%;
-  left:50%;
+  top: 25%;
+  left: 50%;
   background-color: blanchedalmond;
   box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem black;
   transform: translateX(-50%);
+  transition: all 0.5s;
+}
+.modal button {
+  padding: 0.5rem 1rem;
+  margin: 1rem auto;
+  display: block;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-.hidden{
-  display: none;
+.hidden {
+  /* display: none; */
+  /* visibility: none; */
+  opacity: 0;
 }

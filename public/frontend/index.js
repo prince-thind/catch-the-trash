@@ -28,7 +28,12 @@ async function init() {
         reset();
     })
 
-    requestAnimationFrame(animate)
+    requestAnimationFrame(animate);
+
+    setInterval(() => {
+        if (state.dragging) return;
+        state.time--;
+    }, 1000)
 
 }
 
