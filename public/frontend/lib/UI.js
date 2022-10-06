@@ -12,9 +12,26 @@ const UI = {
 
 function hideLoadingScreen() {
     UI.loadingModal.classList.add('hide')
-    UI.loadingModal.classList.add('hidden')
+    setTimeout(() => {
+        UI.loadingModal.classList.add('hidden')
+    }, 500)
+}
+
+function showGameOver({ score }) {
+    const textElement = UI.gameOver.querySelector('p')
+    textElement.textContent = `You scored: ${score} points!`
+    UI.gameOver.classList.toggle('show');
+    UI.gameOver.classList.toggle('hidden');
 }
 
 
+function updateScoreBar({ score, highscore, time }) {
+    UI.score.textContent = `Score: ${score}`;
+    UI.highscore.textContent = `HighScore: ${highscore}`;
+    UI.time.textContent = `Time remaining: ${time}`;
+}
+
+
+
 export default UI;
-export { hideLoadingScreen }
+export { hideLoadingScreen, showGameOver, updateScoreBar }

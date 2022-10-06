@@ -39,7 +39,7 @@
   top: 25%;
   left: 50%;
   background-color: hsl(240, 25%, 50%);
-  color:white;
+  color: white;
   box-shadow: 0.2rem 0.2rem 0.2rem 0rem black;
   transform: translateX(-50%);
 }
@@ -51,17 +51,17 @@
   cursor: pointer;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
-.hide{
+.hide {
   animation-name: hide;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
 
-.show{
+.show {
   animation-name: hide;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
@@ -69,12 +69,10 @@
 }
 
 @keyframes hide {
-  0%{
+  0% {
     opacity: 1;
-    display: block;
   }
-  100%{
+  100% {
     opacity: 0;
-    display: none;
   }
 }

@@ -1,5 +1,5 @@
 import state from "./state.js";
-import UI from "./UI.js";
+import UI, { showGameOver, updateScoreBar } from "./UI.js";
 
 export default function animate() {
 
@@ -8,19 +8,13 @@ export default function animate() {
     setTrashPosition(state.trash);
     incrementPosition();
     checkCollision();
-    updateScoreBar();
+    updateScoreBar({ time: state.time, highscore: state.highscore, score: state.score });
 
     if (state.time <= 0) {
-        gameOver();
+        showGameOver({ score: state.score });
         return;
     }
     requestAnimationFrame(animate);
-}
-function gameOver() {
-    const textElement = UI.gameOver.querySelector('p')
-    textElement.textContent = `You scored: ${state.score} points!`
-    UI.gameOver.classList.toggle('show');
-    UI.gameOver.classList.toggle('hidden');
 }
 
 function incrementPosition() {
@@ -31,12 +25,6 @@ function incrementPosition() {
 function setTrashPosition({ x, y }) {
     UI.trash.style.top = y + "px";
     UI.trash.style.transform = `translateX(${x}px)`
-}
-
-function updateScoreBar() {
-    UI.score.textContent = `Score: ${state.score}`;
-    UI.highscore.textContent = `HighScore: ${state.highscore}`;
-    UI.time.textContent = `Time remaining: ${state.time}`;
 }
 
 function checkCollision() {
