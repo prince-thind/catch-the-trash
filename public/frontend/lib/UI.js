@@ -11,6 +11,7 @@ const UI = {
 }
 
 function hideLoadingScreen() {
+    UI.loadingModal.classList.add('hide')
     UI.loadingModal.classList.add('hidden')
 }
 

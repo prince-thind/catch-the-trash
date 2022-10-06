@@ -19,7 +19,8 @@ export default function animate() {
 function gameOver() {
     const textElement = UI.gameOver.querySelector('p')
     textElement.textContent = `You scored: ${state.score} points!`
-    UI.gameOver.classList.toggle('hidden')
+    UI.gameOver.classList.toggle('show');
+    UI.gameOver.classList.toggle('hidden');
 }
 
 function incrementPosition() {

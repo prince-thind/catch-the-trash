@@ -33,15 +33,15 @@
 }
 
 .modal {
-  padding: 2rem;
+  padding: 2rem 4rem;
   font-size: 3rem;
   position: absolute;
   top: 25%;
   left: 50%;
-  background-color: blanchedalmond;
-  box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem black;
+  background-color: hsl(240, 25%, 50%);
+  color:white;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0rem black;
   transform: translateX(-50%);
-  transition: all 0.5s;
 }
 .modal button {
   padding: 0.5rem 1rem;
@@ -51,8 +51,30 @@
   cursor: pointer;
 }
 
-.hidden {
-  /* display: none; */
-  /* visibility: none; */
-  opacity: 0;
+.hidden{
+  display: none;
+}
+
+.hide{
+  animation-name: hide;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.show{
+  animation-name: hide;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+
+@keyframes hide {
+  0%{
+    opacity: 1;
+    display: block;
+  }
+  100%{
+    opacity: 0;
+    display: none;
+  }
 }
