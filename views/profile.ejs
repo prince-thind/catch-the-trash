@@ -4,29 +4,51 @@
         <h2>
             <%= locals.username %>'s Profile
         </h2>
-        <h3>
-            User Info:
-        </h3>
-        <ul>
-            <li>Username: <%=locals.username %>
-            </li>
-            <li>Email: <%=locals.email %>
-            </li>
-            <li>HighScore: <%=locals.highscore %>
-            </li>
-        </ul>
+        <div class="user-profile-main">
 
-        
+            <section>
+                <h3>
+                    User Info:
+                </h3>
+                <ul>
+                    <li>Username: <%=locals.username %>
+                    </li>
+                    <li>Email: <%=locals.email %>
+                    </li>
+                    <li>HighScore: <%=locals.highscore %>
+                    </li>
+                </ul>
+            </section>
+            <section>
+
+
+                <table class="scores-table">
+                    <caption>
+                        Last 5 Scores
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <% for(const [index,score] of locals.scores.entries()){ %>
+                        <tr>
+                            <td>
+                                <%= index+1 %>
+                            </td>
+                            <td>
+                                <%=score %>
+                            </td>
+
+                        </tr>
+                        <% } %>
+                </table>
+            </section>
+        </div>
+
         <a class="link" href="/game"> Play Game</a>
-        <h3>
-            Last 5 Scores:
-        </h3>
-        <ol>
-            <% for(const score of locals.scores){ %>
-                <li>
-                    <%=score %> Points!
-                </li>
-                <% } %>
-            </ol>
+
+
     </div>
     <%-include('footer')%>
