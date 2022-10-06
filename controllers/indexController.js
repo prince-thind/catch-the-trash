@@ -64,3 +64,19 @@ exports.game = function (req, res, next) {
 exports.profile = function (req, res, next) {
     res.render('profile', { title: res.locals.username + "'s Profile" });
 }
+
+exports.profileDelete = async function (req, res, next) {
+
+    const dbUser = await User.findOne({ username: res.locals.username });
+    if (dbUser) {
+        await dbUser.remove();
+        res.clearCookie('token')
+        res.redirect("/");
+    }
+    else {
+        res.render('login', { errors: ['Username or Password incorrect'] })
+    }
+
+
+
+}

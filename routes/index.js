@@ -18,5 +18,6 @@ router.get('/about', indexController.about);
 
 router.get('/game', indexController.game);
 router.get('/profile', indexController.profile);
+router.get('/profile/delete', indexController.profileDelete);
 
 module.exports = router;

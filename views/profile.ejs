@@ -17,6 +17,19 @@
                     </li>
                     <li>HighScore: <%=locals.highscore %>
                     </li>
+                    <li><a href="/profile/delete" id="delete-button">Delete Account?</a></li>
+                    <script>
+                        const deleteButton = document.querySelector('#delete-button');
+                        deleteButton.addEventListener('click', confirmDeletion)
+                        function confirmDeletion(e) {
+                            const userInput = confirm('Do You want to delete your Account?');
+                            if (userInput) {
+                                return true;
+                            }
+                            e.preventDefault();
+                            return false;
+                        }
+                    </script>
                 </ul>
             </section>
             <section>
@@ -51,4 +64,6 @@
 
 
     </div>
+
+
     <%-include('footer')%>
