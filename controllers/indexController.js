@@ -65,8 +65,12 @@ exports.profile = function (req, res, next) {
     res.render('profile', { title: res.locals.username + "'s Profile" });
 }
 
-exports.profileDelete = async function (req, res, next) {
+exports.profileDelete_GET = function (req, res, next) {
+    res.render('profileDelete', { title: "Delete " + res.locals.username + "'s Profile?" });
+}
 
+
+exports.profileDelete_POST = async function (req, res, next) {
     const dbUser = await User.findOne({ username: res.locals.username });
     if (dbUser) {
         await dbUser.remove();
@@ -76,7 +80,5 @@ exports.profileDelete = async function (req, res, next) {
     else {
         res.render('login', { errors: ['Username or Password incorrect'] })
     }
-
-
 
 }
