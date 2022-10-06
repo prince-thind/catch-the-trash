@@ -8,7 +8,7 @@ const state = {
     dragging: false,
     score: 0,
     highscore: 0,
-    time: 15,
+    time: 2,
 }
 
 export default state;

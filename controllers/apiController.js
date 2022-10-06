@@ -20,3 +20,20 @@ exports.highscore_POST = async function (req, res) {
         res.sendStatus(200)
     }
 }
+
+exports.scores_POST = async function (req, res) {
+    const score = req.body.score;
+
+    const dbUser = await User.findOne({ username: res.locals.username });
+
+    if (!dbUser) {
+        res.sendStatus(404);
+
+    }
+    else {
+        dbUser.scores.unshift(score);
+        if(dbUser.scores.length>5) dbUser.scores.length=5;
+        await dbUser.save();
+        res.sendStatus(200)
+    }
+}

@@ -15,6 +15,18 @@
             <li>HighScore: <%=locals.highscore %>
             </li>
         </ul>
+
+        
         <a class="link" href="/game"> Play Game</a>
+        <h3>
+            Last 5 Scores:
+        </h3>
+        <ol>
+            <% for(const score of locals.scores){ %>
+                <li>
+                    <%=score %> Points!
+                </li>
+                <% } %>
+            </ol>
     </div>
     <%-include('footer')%>
