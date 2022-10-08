@@ -1,5 +1,5 @@
 import animate, { reset } from './lib/animation.js';
-import { fetchHighScore, postHighScore } from './lib/api.js'
+import { fetchHighScore } from './lib/api.js'
 import state from './lib/state.js';
 import UI, { hideLoadingScreen } from './lib/UI.js';
 
@@ -37,15 +37,14 @@ async function init() {
 
 }
 
-async function incrementScore() {
+function incrementScore() {
     state.score++;
     if (state.score > state.highscore) {
-        await updateHighscore(state.score);
+        updateHighscore(state.score);
     }
 }
 
-async function updateHighscore(score) {
+function updateHighscore(score) {
     state.highscore = score;
-    await postHighScore(score)
 }
 

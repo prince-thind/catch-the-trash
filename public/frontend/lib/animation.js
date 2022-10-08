@@ -1,4 +1,4 @@
-import { postScore } from "./api.js";
+import { postScore, postHighScore } from "./api.js";
 import state from "./state.js";
 import UI, { showGameOver, updateScoreBar } from "./UI.js";
 
@@ -14,6 +14,8 @@ export default function animate() {
     if (state.time <= 0) {
         showGameOver({ score: state.score });
         postScore(state.score);
+        postHighScore(state.highscore)
+
         return;
     }
     requestAnimationFrame(animate);
