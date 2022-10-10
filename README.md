@@ -4,7 +4,7 @@ A simple game where you have to catch the trash before it lands somewhere other 
 
 
 # Live Link:
-<a href="#">Here</a>  (link will be added after deployment)
+<a href="https://catch-the-trash.onrender.com/profile" target="_blank">Here</a>  (link will be added after deployment)
 
 # How to run
 1. A .env file is required at the project root with the following structure:
