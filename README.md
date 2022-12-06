@@ -1,11 +1,11 @@
-# catch-the-trash
+# Catch The Trash
 
-A simple game where you have to catch the trash before it lands somewhere other than the bin
+Catch the Trash is a simple game where you have to catch the trash before it lands somewhere other than the bin. The project has been primarly built as a part of my academic curriculam but serves as a good reference point for applications which include both a frontend and backend.
 
-# Live Link:
-<a href="https://catch-the-trash.onrender.com/profile" target="_blank">Here</a>
+# [Live Link](https://catch-the-trash.onrender.com/")
 
 # How to run
+
 1. A .env file is required at the project root with the following structure:
 
 <pre>
@@ -14,7 +14,7 @@ TOKEN_KEY=any_random_string_for_encryption_purposes
 </pre>
 
 2. Install npm packagees by running:
-<pre>npm i</pre>  
+<pre>npm i</pre>
 
 3. Start the development :
 <pre>npm start</pre>
@@ -22,18 +22,18 @@ TOKEN_KEY=any_random_string_for_encryption_purposes
 4. Visit <a href="http://localhost:3000">localhost:3000</a> to view the project locally
 
 # Technologies Used
-+ MongoDB
-+ Mongoose
-+ express
-+ jsonwebtoken
-+ cookie-parser
-+ EJS templates
-+ HTML
-+ vanilla JS
-+ vanilla CSS
 
+- MongoDB
+- Mongoose
+- express
+- jsonwebtoken
+- cookie-parser
+- EJS templates
+- HTML
+- vanilla JS
+- vanilla CSS
 
-# Motivation
-The project has been developed party for the fulfillment of my academic obligations and party to satify my curiosity to build a full stack app. Feel free to ping me regarding any queries.
+# Future Plans
 
-
+- convert frontend to an independent module or project served from its own server
+- improve GUI
